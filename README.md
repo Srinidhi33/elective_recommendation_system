@@ -34,4 +34,25 @@ Presidency University, Bengaluru
 - Backend powered by SQLite for managing student and course data.
 
 ---
+## Steps to run this Project
+### 1. Clone this repository to your local machine:
+git clone https://github.com/your-repo/elective_course_recommendation.git
+
+cd elective_course_recommendation
+---
+### 2. Install Dependencies
+pip install -r requirements.txt
+---
+### 3. Initialize the Database
+python -c "from database import init_db; init_db()"
+---
+### 4. Add Required Data Files
+- dataset for ml recommendation system for elective.xlsx (student grades and performance data)
+- course details.xlsx (course metadata such as course name, description, objectives, and instructor details)
+### 5. Run the Application
+streamlit run student_interface.py
+---
+---
+
+
 
