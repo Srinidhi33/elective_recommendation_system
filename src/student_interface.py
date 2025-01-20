@@ -8,13 +8,13 @@ def load_course_details(file_path):
     return pd.read_excel(file_path)
 
 def main():
-    st.title("Elective Course Recommendation System")
+    st.title("Elective Course Recommendation System Using Machine Learning")
 
     init_db()
 
     # Load data only once
-    grade_data = load_data("dataset for ml recommendation system for elective.xlsx")
-    course_details = load_course_details("course details.xlsx")
+    grade_data = load_data("E:\CodeBase\elective_recommendation_system\datasets\dataset for ml recommendation system for elective.xlsx")
+    course_details = load_course_details("E:\CodeBase\elective_recommendation_system\datasets\course details.xlsx")
 
     # Initialize variables for session state
     if 'recommendations' not in st.session_state:
@@ -47,7 +47,7 @@ def main():
                 for course in st.session_state.recommendations:
                     course_info = course_details[course_details['course_code'] == course].iloc[0]
                     current_enrolled = get_course_enrollment(course)
-
+                    # print(course_info)
                     if current_enrolled < 60:
                         st.write(f"\nCourse Code: {course}")
                         st.write(f"Course Name: {course_info['course_name']}")
